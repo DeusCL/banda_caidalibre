@@ -1,4 +1,4 @@
 from app.main import app
-from fastapi.middleware.wsgi import WSGIMiddleware
+from starlette.middleware.wsgi import WSGIApp
 
-application = WSGIMiddleware(app)
+application = WSGIApp(app)
