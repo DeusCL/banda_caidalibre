@@ -4,14 +4,13 @@ from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="app/templates")
 
-def https_url_for(request: Request, name: str, **path_params: Any) -> str:
-    http_url = request.url_for(name, **path_params)
+def static_url_for(file) -> str:
+    print(file)
 
-    # Replace 'http' with 'https'
-    result = http_url.replace("http", "https", 1)
-    return result
 
-templates.env.globals["https_url_for"] = https_url_for
+    return file
+
+templates.env.globals["static_url_for"] = static_url_for
 
 default_router = APIRouter()
 
