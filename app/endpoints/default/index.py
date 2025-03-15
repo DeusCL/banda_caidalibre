@@ -4,13 +4,10 @@ from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="app/templates")
 
-def static_url_for(file) -> str:
-    print(file)
+def get_url_for(path) -> str:
+    return f"https://bandacaidalibre.com/{path}"
 
-
-    return file
-
-templates.env.globals["static_url_for"] = static_url_for
+templates.env.globals["get_url_for"] = get_url_for
 
 default_router = APIRouter()
 
