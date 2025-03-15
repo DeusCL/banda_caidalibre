@@ -1,4 +1,4 @@
 from app.main import app
-from fastapi.middleware.wsgi import WSGIMiddleware
+from a2wsgi import ASGIMiddleware
 
-application = WSGIMiddleware(app)
+application = ASGIMiddleware(app)
