@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caída Libre</title>
+    <link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', path='img/bg_pattern.png') }}");
+            background-size: 300px 300px;
+            background-repeat: repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("{{ url_for('static', path='img/bg.jpg') }}") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <!-- <img src="static/img/LogoWhite.png" alt="cali"> -->
+            <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#musica">Música</a></li>
+            <!-- <li><a href="#conciertos">Conciertos</a></li> -->
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <h1 class="logo">
+            <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
+        </h1>
+        <p class="tagline">La gravedad del rock en cada acorde</p>
+        <!-- <a href="#conciertos" class="btn">Próximos Conciertos</a> -->
+    </header>
+
+    <section id="nosotros">
+        <h2 class="section-title">Nosotros</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Emergiendo del vibrante panorama musical de la región del Bio-Bio,
+                    “Caída Libre” es una banda que ha demostrado ser una fuerza imparable en la escena musical.
+                </p>
+                <p>
+                    Desde su debut ha dejado una huella indeleble en diversos escenarios,
+                    acumulando premios y reconocimientos a lo largo de los años. Su música,
+                    una mezcla de pasión, talento y creatividad, ha resonado con el público y
+                    los críticos por igual.
+                </p>
+            </div>
+            <!-- <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="Banda Caída Libre">
+            </div> -->
+        </div>
+    </section>
+
+    <section id="musica" class="music">
+        <h2 class="section-title">Música</h2>
+        <div class="albums">
+            <div class="album">
+                <div class="album-cover">
+                    <img src="{{ url_for('static', path='img/singles/caracol.jpeg') }}" alt="Single Caracol">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Caracol</h3>
+                    <p class="album-year">2025</p>
+                    <div class="album-links">
+                        <a href="#">Spotify</a>
+                        <a href="#">Apple Music</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="album">
+                <div class="album-cover">
+                    <img src="{{ url_for('static', path='img/singles/escencia.jpg') }}" alt="Single Escencia">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Escencia</h3>
+                    <p class="album-year">2025</p>
+                    <div class="album-links">
+                        <a href="#">Spotify</a>
+                        <a href="#">Apple Music</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="album">
+                <div class="album-cover">
+                    <img src="{{ url_for('static', path='img/covers/vivo.png') }}" alt="Cover Vivo">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Vivo (Cover)</h3>
+                    <p class="album-year">2025</p>
+                    <div class="album-links">
+                        <a href="https://www.youtube.com/watch?v=rUT8LfNcsmQ" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="album">
+                <div class="album-cover">
+                    <img src="/api/placeholder/400/400" alt="EP Aceleración">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Aceleración (EP)</h3>
+                    <p class="album-year">2019</p>
+                    <div class="album-links">
+                        <a href="#">Spotify</a>
+                        <a href="#">Apple Music</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="album">
+                <div class="album-cover">
+                    <img src="/api/placeholder/400/400" alt="Single Ingravidez">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Ingravidez (Single)</h3>
+                    <p class="album-year">2024</p>
+                    <div class="album-links">
+                        <a href="#">Spotify</a>
+                        <a href="#">Apple Music</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="conciertos" style="display: none;">
+        <h2 class="section-title">Próximos Conciertos</h2>
+        <div class="concerts">
+            <div class="concert">
+                <p class="concert-date">25 de Marzo, 2025</p>
+                <h3 class="concert-venue">Foro Indie Rocks!</h3>
+                <p class="concert-location">Ciudad de México, MX</p>
+                <a href="#" class="btn">Comprar Boletos</a>
+            </div>
+            
+            <div class="concert">
+                <p class="concert-date">12 de Abril, 2025</p>
+                <h3 class="concert-venue">C3 Stage</h3>
+                <p class="concert-location">Guadalajara, MX</p>
+                <a href="#" class="btn">Comprar Boletos</a>
+            </div>
+            
+            <div class="concert">
+                <p class="concert-date">30 de Abril, 2025</p>
+                <h3 class="concert-venue">Foro Alicia</h3>
+                <p class="concert-location">Ciudad de México, MX</p>
+                <a href="#" class="btn">Comprar Boletos</a>
+            </div>
+            
+            <div class="concert">
+                <p class="concert-date">15 de Mayo, 2025</p>
+                <h3 class="concert-venue">Café Iguana</h3>
+                <p class="concert-location">Monterrey, MX</p>
+                <a href="#" class="btn">Comprar Boletos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+        <h2 class="section-title">Galería</h2>
+        <div class="photos">
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/all.jpg') }}" alt="Caída Libre en concierto 1">
+            </div>
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/agus.jpg') }}" alt="Caída Libre en concierto 2">
+            </div>
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/basti.jpg') }}" alt="Caída Libre en concierto 3">
+            </div>
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/cris.jpg') }}" alt="Caída Libre en concierto 4">
+            </div>
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/mati.jpg') }}" alt="Caída Libre en concierto 5">
+            </div>
+            <div class="photo">
+                <img src="{{ url_for('static', path='img/gallery/rico.jpg') }}" alt="Waxeto reko 7w7">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-content">
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" placeholder="Tu correo">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" placeholder="Asunto">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" placeholder="Tu mensaje"></textarea>
+                </div>
+                <a href="#" class="btn">Enviar Mensaje</a>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Booking</h3>
+                    <p>booking@caidalibre.com</p>
+                    <p>+56 9 8660 0933</p>
+                </div>
+                <div class="info-item">
+                    <h3>Dirección</h3>
+                    <p>Concepción & Chiguayante</p>
+                    <p>Chile</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/banda_caidalibre" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/@banda_caidalibre" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Caída Libre</div>
+        <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#musica">Música</a></li>
+            <!-- <li><a href="#conciertos">Conciertos</a></li> -->
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <p class="copyright">© 2025 Caída Libre. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
