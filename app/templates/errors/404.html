@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada | Caída Libre</title>
+    <link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', path='img/bg_pattern.png') }}");
+            background-size: 300px 300px;
+            background-repeat: repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .error-container {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: #fff;
+        }
+        
+        .error-logo img {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(90deg, #6F16FF, #9B4DFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(111, 22, 255, 0.3);
+        }
+        
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0 40px;
+        }
+        
+        .error-details {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background-color: #6F16FF;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 4px;
+        }
+        
+        .home-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(111, 22, 255, 0.3);
+        }
+        
+        .animation-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .falling-note {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(111, 22, 255, 0);
+            transform: rotate(45deg);
+            top: -50px;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container" id="animation-container">
+        <!-- JS insertará notas musicales cayendo aquí -->
+    </div>
+
+    <div class="error-container">
+        <div class="error-logo">
+            <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="Caída Libre">
+        </div>
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Página no encontrada</h2>
+        <p class="error-details">
+            Parece que has perdido el ritmo. La página que buscas no existe o ha sido movida a otro escenario.
+        </p>
+        <a href="/" class="home-button">Volver al inicio</a>
+    </div>
+
+    <script>
+        // Crear animación de notas musicales cayendo
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('animation-container');
+            const containerWidth = container.offsetWidth;
+            const notesCount = 20;
+
+            // Formas de notas musicales (rutas SVG personalizadas como strings)
+            const notes = [
+                `<svg width="30" height="30" viewBox="0 0 24 24" fill="#6F16FF" opacity="0.5"><path d="M12,3V13.55C11.41,13.21 10.73,13 10,13C7.79,13 6,14.79 6,17C6,19.21 7.79,21 10,21C12.21,21 14,19.21 14,17V7H18V3H12Z"></path></svg>`,
+                `<svg width="30" height="30" viewBox="0 0 24 24" fill="#6F16FF" opacity="0.5"><path d="M6,3V7H10V13.55C9.41,13.21 8.73,13 8,13C5.79,13 4,14.79 4,17C4,19.21 5.79,21 8,21C10.21,21 12,19.21 12,17V3H6M16,3V13.55C15.41,13.21 14.73,13 14,13C11.79,13 10,14.79 10,17C10,19.21 11.79,21 14,21C16.21,21 18,19.21 18,17V7H22V3H16Z"></path></svg>`
+            ];
+
+            // Crear notas
+            for (let i = 0; i < notesCount; i++) {
+                const noteElement = document.createElement('div');
+                noteElement.classList.add('falling-note');
+                noteElement.style.left = `${Math.random() * 100}%`;
+                noteElement.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                noteElement.style.animationDelay = `${Math.random() * 5}s`;
+                noteElement.innerHTML = notes[Math.floor(Math.random() * notes.length)];
+
+                container.appendChild(noteElement);
+            }
+        });
+
+        // Animación para que se caigan
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                0% {
+                    transform: translateY(-50px) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(calc(100vh + 50px)) rotate(360deg);
+                    opacity: 0.7;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
