@@ -14,6 +14,10 @@
     flex-direction: column;
     color: #fff;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+
+    padding-bottom: calc(env(safe-area-inset-bottom) + 30px);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 30px); /* For older browsers */
+    overflow-y: auto;
 }
 
 .sidebar.active {
@@ -88,6 +92,7 @@
 .sidebar-footer {
     padding: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
 }
 
 .sidebar-footer .social-links {
