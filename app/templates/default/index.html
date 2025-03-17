@@ -6,6 +6,7 @@
     <title>Caída Libre</title>
     <link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/sidebar.css') }}">
     <style>
         body {
             background-image: url("{{ url_for('static', path='img/bg_pattern.png') }}");
@@ -27,16 +28,16 @@
     </style>
 </head>
 <body>
+    {% include 'components/sidebar.html' %}
+
     <nav>
         <div class="nav-logo">
-            <!-- <img src="img/LogoWhite.png" alt="cali"> -->
             <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
         </div>
         <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#musica">Música</a></li>
-            <!-- <li><a href="#conciertos">Conciertos</a></li> -->
             <li><a href="#galeria">Galería</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -47,7 +48,6 @@
             <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
         </h1>
         <p class="tagline">La gravedad del rock en cada acorde</p>
-        <!-- <a href="#conciertos" class="btn">Próximos Conciertos</a> -->
     </header>
 
     <section id="nosotros">
@@ -65,9 +65,6 @@
                     los críticos por igual.
                 </p>
             </div>
-            <!-- <div class="about-image">
-                <img src="/api/placeholder/600/400" alt="Banda Caída Libre">
-            </div> -->
         </div>
     </section>
 
@@ -83,7 +80,7 @@
                     <p class="album-year">2025</p>
                     <div class="album-links">
                         <a href="#">Spotify</a>
-                        <a href="#">Apple Music</a>
+                        <a href="#">Apple&nbsp;Music</a>
                         <a href="#">YouTube</a>
                     </div>
                 </div>
@@ -98,7 +95,7 @@
                     <p class="album-year">2025</p>
                     <div class="album-links">
                         <a href="#">Spotify</a>
-                        <a href="#">Apple Music</a>
+                        <a href="#">Apple&nbsp;Music</a>
                         <a href="#">YouTube</a>
                     </div>
                 </div>
@@ -116,36 +113,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="album">
-                <div class="album-cover">
-                    <img src="/api/placeholder/400/400" alt="EP Aceleración">
-                </div>
-                <div class="album-info">
-                    <h3 class="album-title">Aceleración (EP)</h3>
-                    <p class="album-year">2019</p>
-                    <div class="album-links">
-                        <a href="#">Spotify</a>
-                        <a href="#">Apple Music</a>
-                        <a href="#">YouTube</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="album">
-                <div class="album-cover">
-                    <img src="/api/placeholder/400/400" alt="Single Ingravidez">
-                </div>
-                <div class="album-info">
-                    <h3 class="album-title">Ingravidez (Single)</h3>
-                    <p class="album-year">2024</p>
-                    <div class="album-links">
-                        <a href="#">Spotify</a>
-                        <a href="#">Apple Music</a>
-                        <a href="#">YouTube</a>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
 
@@ -255,11 +222,12 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#musica">Música</a></li>
-            <!-- <li><a href="#conciertos">Conciertos</a></li> -->
             <li><a href="#galeria">Galería</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         <p class="copyright">© 2025 Caída Libre. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="{{ url_for('static', path='js/sidebar.js') }}"></script>
 </body>
 </html>
