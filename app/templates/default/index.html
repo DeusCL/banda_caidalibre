@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caída Libre</title>
-    <link rel="icon" href="{{ get_url_for(path='static/img/favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ get_url_for(path='static/css/base.css') }}">
+    <link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
     <style>
         body {
-            background-image: url("{{ get_url_for(path='static/img/bg_pattern.png') }}");
+            background-image: url("{{ url_for('static', path='img/bg_pattern.png') }}");
             background-size: 300px 300px;
             background-repeat: repeat;
             background-position: center;
@@ -16,7 +16,7 @@
         }
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("{{ get_url_for(path='static/img/bg.jpg') }}") center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("{{ url_for('static', path='img/bg.jpg') }}") center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,8 +29,8 @@
 <body>
     <nav>
         <div class="nav-logo">
-            <!-- <img src="static/img/LogoWhite.png" alt="cali"> -->
-            <img src="{{ get_url_for(path='static/img/logo_white.png') }}" alt="cali">
+            <!-- <img src="img/LogoWhite.png" alt="cali"> -->
+            <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
         </div>
         <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
@@ -44,7 +44,7 @@
 
     <header id="inicio">
         <h1 class="logo">
-            <img src="{{ get_url_for(path='static/img/logo_white.png') }}" alt="cali">
+            <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
         </h1>
         <p class="tagline">La gravedad del rock en cada acorde</p>
         <!-- <a href="#conciertos" class="btn">Próximos Conciertos</a> -->
@@ -76,7 +76,7 @@
         <div class="albums">
             <div class="album">
                 <div class="album-cover">
-                    <img src="{{ get_url_for(path='static/img/singles/caracol.jpeg') }}" alt="Single Caracol">
+                    <img src="{{ url_for('static', path='img/singles/caracol.jpeg') }}" alt="Single Caracol">
                 </div>
                 <div class="album-info">
                     <h3 class="album-title">Caracol</h3>
@@ -91,7 +91,7 @@
 
             <div class="album">
                 <div class="album-cover">
-                    <img src="{{ get_url_for(path='static/img/singles/escencia.jpg') }}" alt="Single Escencia">
+                    <img src="{{ url_for('static', path='img/singles/escencia.jpg') }}" alt="Single Escencia">
                 </div>
                 <div class="album-info">
                     <h3 class="album-title">Escencia</h3>
@@ -106,7 +106,7 @@
 
             <div class="album">
                 <div class="album-cover">
-                    <img src="{{ get_url_for(path='static/img/covers/vivo.png') }}" alt="Cover Vivo">
+                    <img src="{{ url_for('static', path='img/covers/vivo.png') }}" alt="Cover Vivo">
                 </div>
                 <div class="album-info">
                     <h3 class="album-title">Vivo (Cover)</h3>
@@ -186,22 +186,22 @@
         <h2 class="section-title">Galería</h2>
         <div class="photos">
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/all.jpg') }}" alt="Caída Libre en concierto 1">
+                <img src="{{ url_for('static', path='img/gallery/all.jpg') }}" alt="Caída Libre en concierto 1">
             </div>
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/agus.jpg') }}" alt="Caída Libre en concierto 2">
+                <img src="{{ url_for('static', path='img/gallery/agus.jpg') }}" alt="Caída Libre en concierto 2">
             </div>
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/basti.jpg') }}" alt="Caída Libre en concierto 3">
+                <img src="{{ url_for('static', path='img/gallery/basti.jpg') }}" alt="Caída Libre en concierto 3">
             </div>
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/cris.jpg') }}" alt="Caída Libre en concierto 4">
+                <img src="{{ url_for('static', path='img/gallery/cris.jpg') }}" alt="Caída Libre en concierto 4">
             </div>
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/mati.jpg') }}" alt="Caída Libre en concierto 5">
+                <img src="{{ url_for('static', path='img/gallery/mati.jpg') }}" alt="Caída Libre en concierto 5">
             </div>
             <div class="photo">
-                <img src="{{ get_url_for(path='static/img/gallery/rico.jpg') }}" alt="Waxeto reko 7w7">
+                <img src="{{ url_for('static', path='img/gallery/rico.jpg') }}" alt="Waxeto reko 7w7">
             </div>
         </div>
     </section>
