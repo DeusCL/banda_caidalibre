@@ -132,7 +132,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .about-text {
