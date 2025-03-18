@@ -253,34 +253,6 @@ section {
     margin-bottom: 20px;
 }
 
-.gallery {
-    background-color: #1a1a1a;
-}
-
-.photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.photo {
-    height: 250px;
-    overflow: hidden;
-    border-radius: 5px;
-    position: relative;
-}
-
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.photo:hover img {
-    transform: scale(1.1);
-}
-
 .contact-content {
     display: flex;
     justify-content: space-between;
