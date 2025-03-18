@@ -35,3 +35,238 @@
         margin-bottom: 10px;
     }
 }
+
+/* Converted from grid to a more controlled preview layout */
+.gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+}
+
+.photo {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+/* "More photos" overlay styling */
+.photo-more {
+    position: relative;
+}
+
+.more-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(111, 22, 255, 0.7); /* Using your primary color with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Lightbox styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 14px;
+    right: 33px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.lightbox-images {
+    max-width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-images img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: none;
+}
+
+.lightbox-images img.active {
+    display: block;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(111, 22, 255, 0.3); /* Using your primary color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.prev-btn {
+    left: 10px;
+    padding-right: 14px;
+    padding-bottom: 11px;
+}
+
+.next-btn {
+    right: 10px;
+    padding-left: 14px;
+    padding-bottom: 11px;
+}
+
+.lightbox-thumbnails {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    margin-top: 15px;
+    margin-right: 22px;
+    margin-left: 22px;
+    padding: 10px 0;
+}
+
+.lightbox-thumbnail {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: opacity 0.3s, border-color 0.3s;
+}
+
+.lightbox-thumbnail img {
+    min-width: 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lightbox-thumbnail.active {
+    border-color: #6F16FF; /* Your primary color */
+    opacity: 1;
+}
+
+.lightbox-caption {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.lightbox-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-caption {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .prev-btn {
+        left: 0px;
+    }
+
+    .next-btn {
+        right: 0px;
+        padding-left: 14px;
+        padding-bottom: 11px;
+    }
+
+    .prev-btn, .next-btn {
+        color: transparent;
+        background-color: transparent;
+        /* height: 530px; */
+        height: unset;
+        border-radius: 0px;
+        width: 40%;
+        top: 62px;
+        bottom: 160px;
+        transform: none;
+    }
+
+    .lightbox-nav {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .lightbox-content {
+        justify-content: start;
+    }
+
+    .lightbox-images {
+        height: unset;
+        display: block;
+        position: absolute;
+        top: 62px;
+        bottom: 160px;
+    }
+
+    .lightbox-images img {
+        max-height: unset;
+        height: 100%;
+    }
+
+
+
+
+
+}
