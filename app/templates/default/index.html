@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/gallery.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         body {
             background-image: url("{{ url_for('static', path='img/bg_pattern.png') }}");
@@ -45,16 +46,16 @@
     </nav>
 
     <header id="inicio">
-        <h1 class="logo">
+        <h1 class="logo" data-aos="zoom-in">
             <img src="{{ url_for('static', path='img/logo_white.png') }}" alt="cali">
         </h1>
-        <p class="tagline">La gravedad del rock en cada acorde</p>
+        <p class="tagline" data-aos="fade-up">La gravedad del rock en cada acorde</p>
     </header>
 
     <section id="nosotros">
-        <h2 class="section-title">Nosotros</h2>
+        <h2 class="section-title" data-aos="fade-up">Nosotros</h2>
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                 <p>
                     Somos "Caída Libre", una banda musical de rock nacida en Concepción/Chiguayante, Chile,
                     nuestro sonido fusiona la escencia del rock clásico con matices modernos, creando una identidad única que nos distingue en la escena.
@@ -82,9 +83,9 @@
     </section>
 
     <section id="musica" class="bg_solid">
-        <h2 class="section-title">Música</h2>
+        <h2 class="section-title" data-aos="fade-up">Música</h2>
         <div class="albums">
-            <div class="album">
+            <div class="album" data-aos="fade-up" data-aos-delay="100">
                 <div class="album-cover">
                     <img src="{{ url_for('static', path='img/singles/caracol.jpeg') }}" alt="Single Caracol">
                 </div>
@@ -99,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="album">
+            <div class="album" data-aos="fade-up" data-aos-delay="200">
                 <div class="album-cover">
                     <img src="{{ url_for('static', path='img/singles/escencia.jpg') }}" alt="Single Escencia">
                 </div>
@@ -114,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="album">
+            <div class="album" data-aos="fade-up" data-aos-delay="300">
                 <div class="album-cover">
                     <img src="{{ url_for('static', path='img/covers/vivo.png') }}" alt="Cover Vivo">
                 </div>
@@ -165,9 +166,9 @@
     {% include 'components/gallery.html' %}
 
     <section id="contacto" class="bg_solid">
-        <h2 class="section-title">Contacto</h2>
+        <h2 class="section-title" data-aos="fade-up">Contacto</h2>
         <div class="contact-content">
-            <div class="contact-form">
+            <div class="contact-form" data-aos="fade-right" data-aos-delay="200">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input type="text" id="name" placeholder="Tu nombre">
@@ -187,7 +188,7 @@
                 <a href="#" class="btn">Enviar Mensaje</a>
             </div>
 
-            <div class="contact-info">
+            <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
                 <div class="info-item">
                     <h3>Booking</h3>
                     <p>booking@caidalibre.com</p>
@@ -224,5 +225,14 @@
     </script>
     <script src="{{ url_for('static', path='js/sidebar.js') }}"></script>
     <script src="{{ url_for('static', path='js/gallery.js') }}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
