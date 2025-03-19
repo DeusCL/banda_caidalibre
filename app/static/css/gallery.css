@@ -23,19 +23,6 @@
     cursor: pointer;
 }
 
-
-.gallery {
-    background-color: #1a1a1a;
-}
-
-.gallery-event-place {
-    margin-bottom: 60px;
-
-    & h3 {
-        margin-bottom: 10px;
-    }
-}
-
 /* Converted from grid to a more controlled preview layout */
 .gallery-preview {
     display: grid;
@@ -45,7 +32,7 @@
 }
 
 .photo {
-    height: 250px;
+    height: 300px;
     overflow: hidden;
     border-radius: 5px;
     position: relative;
@@ -76,11 +63,18 @@
     height: 100%;
     background-color: rgba(111, 22, 255, 0.7); /* Using your primary color with transparency */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+
+    gap: 14px;
+
+    & p {
+        line-height: 1.1;
+    }
 }
 
 /* Lightbox styling */

@@ -22,6 +22,10 @@ header {
     padding: 0 20px;
 }
 
+.bg_solid {
+    background-color: #1a1a1a;
+}
+
 .logo {
     border-bottom: 3px solid #6F16FF;
     padding-bottom: 10px;
@@ -150,10 +154,6 @@ section {
     width: 100%;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.music {
-    background-color: #1a1a1a;
 }
 
 .albums {

@@ -1,49 +1,30 @@
-<section id="galeria" class="gallery">
+<section id="galeria">
     <h2 class="section-title">Galería</h2>
-    <div class="gallery-event-place">
-        <h3>Sala de Artes Escénicas, Chiguayante</h3>
-        <div class="gallery-preview">
-            <!-- Only show first 4 images as preview -->
-            <div class="photo" data-event="arts_room" data-index="0">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_room/all.webp') }}" alt="Todos los integrantes" loading="lazy">
+
+    <div class="gallery-preview">
+        <div class="photo photo-more" data-event="fallrock">
+            <img src="{{ url_for('static', path='img/gallery/events/fallrock/cris.webp') }}" alt="Cristobal el baterista" loading="lazy">
+            <div class="more-overlay">
+                <p><strong>FallRock</strong></p>
+                <p><small>Sala de artes Escénicas</small></p>
             </div>
-            <div class="photo" data-event="arts_room" data-index="1">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_room/agus.webp') }}" alt="Agustín el guitarrista" loading="lazy">
+        </div>
+        <div class="photo photo-more" data-event="arts_fest_ubb">
+            <img src="{{ url_for('static', path='img/gallery/events/arts_fest_ubb/_MG_4182.webp') }}" alt="Agustín el guitarrista" loading="lazy">
+            <div class="more-overlay">
+                <p><strong>Fiesta de las Artes</strong></p>
+                <p><small>Universidad del Bío-Bío</small></p>
             </div>
-            <div class="photo" data-event="arts_room" data-index="2">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_room/basti.webp') }}" alt="Bastián el otro guitarrista" loading="lazy">
-            </div>
-            <div class="photo photo-more" data-event="arts_room">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_room/cris.webp') }}" alt="Cristobal el baterista" loading="lazy">
-                <div class="more-overlay">
-                    <span>+2</span>
-                </div>
+        </div>
+        <div class="photo photo-more" data-event="chiguarock">
+            <img src="{{ url_for('static', path='img/gallery/events/chiguarock/estaa.webp') }}" alt="Agustín el guitarrista" loading="lazy">
+            <div class="more-overlay">
+                <p><strong>ChiguaRock</strong></p>
+                <p><small>Plaza cívica de Chiguayante</small></p>
             </div>
         </div>
     </div>
-    
-    <div class="gallery-event-place">
-        <h3>Fiesta de las Artes y la Cultura Popular, Universidad del Bío-Bío</h3>
-        <div class="gallery-preview">
-            <!-- Only show first 4 images as preview -->
-            <div class="photo" data-event="arts_fest_ubb" data-index="0">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_fest_ubb/_MG_4133.webp') }}" alt="Sebastián y a Bastián" loading="lazy">
-            </div>
-            <div class="photo" data-event="arts_fest_ubb" data-index="1">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_fest_ubb/_MG_4159.webp') }}" alt="Sebastián el tecladista" loading="lazy">
-            </div>
-            <div class="photo" data-event="arts_fest_ubb" data-index="2">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_fest_ubb/_MG_4174.webp') }}" alt="Sebastián el tecladista" loading="lazy">
-            </div>
-            <div class="photo photo-more" data-event="arts_fest_ubb">
-                <img src="{{ url_for('static', path='img/gallery/events/arts_fest_ubb/_MG_4182.webp') }}" alt="Agustín el guitarrista" loading="lazy">
-                <div class="more-overlay">
-                    <span>+10</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+
     <!-- Lightbox container -->
     <div id="gallery-lightbox" class="lightbox">
         <div class="lightbox-content">
