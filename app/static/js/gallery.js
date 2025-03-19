@@ -102,6 +102,10 @@ const galleryData = {
             alt: "Sebastián y Matías corte invícto"
         },
         {
+            src: "img/gallery/events/chiguarock/IMG_1694.webp",
+            alt: "Sencillamente Sebastián viviendo el momento"
+        },
+        {
             src: "img/gallery/events/chiguarock/IMG_1357.webp",
             alt: "Bastián, Agustín y Cristobal saludando de fondo"
         },
@@ -124,7 +128,11 @@ const galleryData = {
         {
             src: "img/gallery/events/chiguarock/IMG_1787.webp",
             alt: "Banda recibiendo el reconocimiento por parte del organizador de ChiguaRock"
-        }
+        },
+        {
+            src: "img/gallery/events/chiguarock/IMG_1788.webp",
+            alt: "Otra más del recibimiento del reconocimiento"
+        },
     ]
 };
 
