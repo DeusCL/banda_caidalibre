@@ -1,4 +1,3 @@
-from typing import Any
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
 
@@ -16,7 +15,7 @@ def default(request: Request):
     return templates.TemplateResponse("default/index.html", {"request": request})
 
 @default_router.get("/get-event-photos")
-def get_event_photos(request: Request) -> dict:
+def get_event_photos() -> dict:
     events_path = PROJECT_ROOT / 'app' / 'static' / 'img' / 'gallery' / 'events'
 
     return {
