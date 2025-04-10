@@ -46,7 +46,8 @@ async def favicon():
 
 
 @app.post("/webhook")
-async def receive_message(request: Request):
+async def receive_message(request: Request) -> dict:
+    print("si")
     form_data = await request.form()
 
     body = form_data.get("Body", "")
