@@ -67,6 +67,12 @@ async def receive_message(request: Request) -> dict:
 
     return {"message": "Mensaje recibido y respuesta enviada"}
 
+
+@app.get("/test")
+async def test() -> dict:
+    return {"message": "Funcionando."}
+
+
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(default_router)
 
